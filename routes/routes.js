@@ -3,12 +3,12 @@ import { getAllEmployees, getEmployee, createEmployee, updateEmployee, deleteEmp
 
 const router = express.Router();
 
-router.route("/")
+router.route("/api/employees")
     .get(getAllEmployees)
-    .post(createEmployee)
-router.route(":id")
-    .get(getEmployee)
-    .patch(updateEmployee)
-    .delete(deleteEmployee)
+//     .post(createEmployee)
+// router.route(":id")
+//     .get(getEmployee)
+//     .patch(updateEmployee)
+//     .delete(deleteEmployee)
 
 export default router;
