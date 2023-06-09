@@ -1,13 +1,10 @@
 import express from "express";
+import {} from "dotenv/config";
+import routes from "./routes/routes.js"
+
 const app = express();
-const port = 5000;
 
-app.use(express.static("public"));
+app.use("/api/v1/employees", routes);
 
-app.get("/", (req, res) => {
-    res.sendFile("index.html", {root: "public"});
-});
-
-app.listen(port, () => {
-    console.log("The server is successfully listening");
-});
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => console.log(`Currently listeing on port: ${PORT}`));
